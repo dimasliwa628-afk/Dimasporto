@@ -1,0 +1,22 @@
+{
+  "name": "dimas-bayu-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Dimas Bayu - SMK Negeri 1 Liwa student",
+  "main": "index.html",
+  "scripts": {
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "copyfiles -u 1 src/**/*.css dist/ && copyfiles -u 1 src/**/*.html dist/",
+    "dev": "tsc --watch",
+    "serve": "npx http-server dist -p 3000",
+    "start": "npm run build && npm run serve"
+  },
+  "keywords": ["portfolio", "website", "typescript", "student"],
+  "author": "Dimas Bayu",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "copyfiles": "^2.4.1",
+    "http-server": "^14.1.1",
+    "typescript": "^5.0.0"
+  }
+}

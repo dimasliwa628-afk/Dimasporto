@@ -1,3 +1,5 @@
+import './style.css'
+
 // TypeScript interfaces
 interface ContactFormData {
     name: string;
@@ -6,26 +8,32 @@ interface ContactFormData {
     message: string;
 }
 
-interface SkillProgress {
-    element: HTMLElement;
-    targetWidth: string;
-}
+// interface SkillProgress {
+//     element: HTMLElement;
+//     targetWidth: string;
+// }
 
 class PortfolioWebsite {
-    private navMenu: HTMLElement | null;
-    private hamburger: HTMLElement | null;
+    // private navMenu: HTMLElement | null;
+    private mobileMenuButton: HTMLElement | null;
+    private mobileMenu: HTMLElement | null;
     private navLinks: NodeListOf<HTMLElement>;
+    private mobileNavLinks: NodeListOf<HTMLElement>;
     private skillBars: NodeListOf<HTMLElement>;
     private contactForm: HTMLFormElement | null;
     private sections: NodeListOf<HTMLElement>;
+    private navbar: HTMLElement | null;
 
     constructor() {
-        this.navMenu = document.querySelector('.nav-menu');
-        this.hamburger = document.querySelector('.hamburger');
+        // this.navMenu = document.querySelector('.nav-menu');
+        this.mobileMenuButton = document.getElementById('mobile-menu-button');
+        this.mobileMenu = document.getElementById('mobile-menu');
         this.navLinks = document.querySelectorAll('.nav-link');
+        this.mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         this.skillBars = document.querySelectorAll('.skill-progress');
         this.contactForm = document.getElementById('contactForm') as HTMLFormElement;
         this.sections = document.querySelectorAll('section');
+        this.navbar = document.getElementById('navbar');
         
         this.init();
     }
@@ -36,32 +44,37 @@ class PortfolioWebsite {
         this.setupSkillBars();
         this.setupSmoothScrolling();
         this.setupFormHandling();
+        this.setupNavbarScroll();
     }
 
     private setupEventListeners(): void {
         // Mobile menu toggle
-        if (this.hamburger && this.navMenu) {
-            this.hamburger.addEventListener('click', () => {
-                this.hamburger?.classList.toggle('active');
-                this.navMenu?.classList.toggle('active');
+        if (this.mobileMenuButton && this.mobileMenu) {
+            this.mobileMenuButton.addEventListener('click', () => {
+                this.mobileMenu!.classList.toggle('hidden');
+                this.mobileMenuButton!.classList.toggle('active');
             });
         }
 
         // Close mobile menu when clicking on nav links
-        this.navLinks.forEach(link => {
+        this.mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
-                this.hamburger?.classList.remove('active');
-                this.navMenu?.classList.remove('active');
+                this.mobileMenu!.classList.add('hidden');
+                this.mobileMenuButton!.classList.remove('active');
             });
         });
+    }
 
-        // Navbar scroll effect
+    private setupNavbarScroll(): void {
+        if (!this.navbar) return;
+
         window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                navbar?.classList.add('scrolled');
+                this.navbar!.classList.add('bg-white/95', 'backdrop-blur-lg', 'shadow-lg');
+                this.navbar!.classList.remove('bg-transparent');
             } else {
-                navbar?.classList.remove('scrolled');
+                this.navbar!.classList.remove('bg-white/95', 'backdrop-blur-lg', 'shadow-lg');
+                this.navbar!.classList.add('bg-transparent');
             }
         });
     }
@@ -75,29 +88,28 @@ class PortfolioWebsite {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.classList.add('animate-fade-in');
                 }
             });
         }, observerOptions);
 
         // Add animation classes to elements
-        this.sections.forEach((section, index) => {
-            section.classList.add('fade-in');
+        this.sections.forEach((section) => {
+            section.classList.add('opacity-0', 'translate-y-8');
             observer.observe(section);
         });
 
         // Animate skill cards
         const skillCards = document.querySelectorAll('.skill-card');
-        skillCards.forEach((card, index) => {
-            card.classList.add('fade-in');
-            (card as HTMLElement).style.animationDelay = `${index * 0.1}s`;
+        skillCards.forEach((card) => {
+            card.classList.add('opacity-0', 'translate-y-8');
             observer.observe(card);
         });
 
         // Animate timeline items
         const timelineItems = document.querySelectorAll('.timeline-item');
         timelineItems.forEach((item, index) => {
-            item.classList.add('slide-in-left');
+            item.classList.add('opacity-0', '-translate-x-8');
             (item as HTMLElement).style.animationDelay = `${index * 0.2}s`;
             observer.observe(item);
         });
@@ -124,14 +136,16 @@ class PortfolioWebsite {
     }
 
     private setupSmoothScrolling(): void {
-        this.navLinks.forEach(link => {
+        const allNavLinks = [...this.navLinks, ...this.mobileNavLinks];
+        
+        allNavLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
                 if (targetId && targetId.startsWith('#')) {
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        const offsetTop = (targetElement as HTMLElement).offsetTop - 70; // Account for fixed navbar
+                        const offsetTop = (targetElement as HTMLElement).offsetTop - 80; // Account for fixed navbar
                         window.scrollTo({
                             top: offsetTop,
                             behavior: 'smooth'
@@ -184,39 +198,27 @@ class PortfolioWebsite {
 
         // Create notification element
         const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
+        notification.className = `notification fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 ${
+            type === 'success' ? 'bg-green-500' : 'bg-red-500'
+        } text-white`;
+        
         notification.innerHTML = `
-            <div class="notification-content">
+            <div class="flex items-center space-x-2">
                 <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
                 <span>${message}</span>
             </div>
-        `;
-
-        // Add styles
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: ${type === 'success' ? '#10b981' : '#ef4444'};
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 10000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
         `;
 
         document.body.appendChild(notification);
 
         // Animate in
         setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
+            notification.classList.remove('translate-x-full');
         }, 100);
 
         // Auto remove after 5 seconds
         setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
+            notification.classList.add('translate-x-full');
             setTimeout(() => {
                 notification.remove();
             }, 300);
@@ -290,19 +292,19 @@ class Utils {
 
 // Initialize the portfolio website when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const portfolio = new PortfolioWebsite();
+    new PortfolioWebsite();
     
     // Add some additional interactive features
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         // Add a subtle animation to the hero title
-        heroTitle.classList.add('fade-in');
+        heroTitle.classList.add('animate-fade-in');
     }
 
     // Add parallax effect to hero section
     window.addEventListener('scroll', Utils.throttle(() => {
         const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
+        const hero = document.querySelector('#home');
         if (hero) {
             (hero as HTMLElement).style.transform = `translateY(${scrolled * 0.5}px)`;
         }

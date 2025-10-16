@@ -2,22 +2,28 @@
   "name": "dimas-bayu-portfolio",
   "version": "1.0.0",
   "description": "Portfolio website for Dimas Bayu - SMK Negeri 1 Liwa student",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "build": "tsc && npm run copy-assets",
-    "copy-assets": "copyfiles -u 1 src/**/*.css dist/ && copyfiles -u 1 src/**/*.html dist/ && copyfiles -u 1 src/**/*.css public/ && copyfiles -u 1 dist/**/*.js public/",
-    "dev": "tsc --watch",
-    "serve": "npx http-server dist -p 3000",
-    "start": "npm run build && npm run serve",
-    "vercel-build": "npm run build"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
-  "keywords": ["portfolio", "website", "typescript", "student"],
+  "keywords": ["portfolio", "website", "typescript", "tailwind", "student"],
   "author": "Dimas Bayu",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "copyfiles": "^2.4.1",
-    "http-server": "^14.1.1",
-    "typescript": "^5.0.0"
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.0"
   }
 }

@@ -88,3 +88,6 @@ coverage/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Vite
+.vite/

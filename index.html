@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimas Bayu - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-inter bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 min-h-screen">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h2 class="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+                        Dimas Bayu
+                    </h2>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link text-white hover:text-secondary-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-white/10">Home</a>
+                        <a href="#about" class="nav-link text-white hover:text-secondary-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-white/10">About</a>
+                        <a href="#skills" class="nav-link text-white hover:text-secondary-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-white/10">Skills</a>
+                        <a href="#education" class="nav-link text-white hover:text-secondary-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-white/10">Education</a>
+                        <a href="#contact" class="nav-link text-white hover:text-secondary-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-white/10">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-secondary-300 focus:outline-none focus:text-secondary-300">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/10 backdrop-blur-lg">
+                <a href="#home" class="mobile-nav-link text-white hover:text-secondary-300 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="mobile-nav-link text-white hover:text-secondary-300 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#skills" class="mobile-nav-link text-white hover:text-secondary-300 block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#education" class="mobile-nav-link text-white hover:text-secondary-300 block px-3 py-2 rounded-md text-base font-medium">Education</a>
+                <a href="#contact" class="mobile-nav-link text-white hover:text-secondary-300 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800"></div>
+        <div class="absolute inset-0 opacity-30" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;%3E%3Cdefs%3E%3Cpattern id=&quot;grain&quot; width=&quot;100&quot; height=&quot;100&quot; patternUnits=&quot;userSpaceOnUse&quot;%3E%3Ccircle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;1&quot; fill=&quot;white&quot; opacity=&quot;0.1&quot;/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23grain)&quot;/%3E%3C/svg%3E')"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Halo, Saya <span class="bg-gradient-to-r from-secondary-400 to-secondary-300 bg-clip-text text-transparent">Dimas Bayu</span>
+                    </h1>
+                    <p class="text-xl text-white/90 mb-4 font-medium">
+                        Pelajar SMK Negeri 1 Liwa | Jurusan Teknik Jaringan Komputer
+                    </p>
+                    <p class="text-lg text-white/80 mb-8 max-w-2xl">
+                        Seorang pelajar yang memiliki passion di bidang marketing dan penjualan, 
+                        dengan keahlian dalam teknologi jaringan komputer.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#about" class="btn-primary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-900 bg-gradient-to-r from-secondary-400 to-secondary-500 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                            Pelajari Lebih Lanjut
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="btn-secondary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-lg backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transform hover:-translate-y-1 transition-all duration-300">
+                            Hubungi Saya
+                            <i class="fas fa-envelope ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center lg:justify-end">
+                    <div class="profile-card relative">
+                        <div class="w-80 h-80 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl flex flex-col items-center justify-center p-8 hover:scale-105 transition-all duration-300">
+                            <div class="w-24 h-24 bg-gradient-to-r from-secondary-400 to-secondary-300 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-user text-4xl text-primary-900"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Dimas Bayu</h3>
+                            <p class="text-white/80 text-center">SMK Negeri 1 Liwa</p>
+                            <div class="mt-6 flex space-x-4">
+                                <div class="w-3 h-3 bg-secondary-400 rounded-full animate-pulse"></div>
+                                <div class="w-3 h-3 bg-secondary-400 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                                <div class="w-3 h-3 bg-secondary-400 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white/5 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Tentang Saya</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-secondary-400 to-secondary-300 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-white/90 leading-relaxed">
+                        Saya adalah seorang pelajar di SMK Negeri 1 Liwa dengan jurusan Teknik Jaringan Komputer. 
+                        Meskipun fokus utama saya adalah teknologi jaringan, saya juga memiliki minat yang besar 
+                        di bidang marketing dan penjualan.
+                    </p>
+                    <p class="text-lg text-white/90 leading-relaxed">
+                        Kombinasi antara pengetahuan teknis di bidang jaringan komputer dan kemampuan marketing 
+                        membuat saya dapat memahami bagaimana teknologi dapat mendukung strategi bisnis dan penjualan.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-6 mt-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-300 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-2xl font-bold text-primary-900">2+</span>
+                            </div>
+                            <p class="text-white/80 font-medium">Tahun Belajar</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-300 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-2xl font-bold text-primary-900">100%</span>
+                            </div>
+                            <p class="text-white/80 font-medium">Dedikasi</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-300 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-2xl font-bold text-primary-900">∞</span>
+                            </div>
+                            <p class="text-white/80 font-medium">Passion</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <div class="w-80 h-80 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-laptop-code text-6xl text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Keahlian & Hobby</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-secondary-400 to-secondary-300 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="skill-card group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary-400 to-primary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-network-wired text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Teknik Jaringan</h3>
+                    <p class="text-white/80 mb-6">Konfigurasi router, switch, dan troubleshooting jaringan komputer</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm text-white/70">
+                            <span>Progress</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-2">
+                            <div class="skill-progress bg-gradient-to-r from-primary-400 to-primary-500 h-2 rounded-full" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Marketing & Penjualan</h3>
+                    <p class="text-white/80 mb-6">Strategi pemasaran digital dan teknik penjualan yang efektif</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm text-white/70">
+                            <span>Progress</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-2">
+                            <div class="skill-progress bg-gradient-to-r from-secondary-400 to-secondary-500 h-2 rounded-full" data-width="90%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary-400 to-primary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-code text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Programming</h3>
+                    <p class="text-white/80 mb-6">HTML, CSS, JavaScript, dan pemahaman dasar sistem komputer</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm text-white/70">
+                            <span>Progress</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-2">
+                            <div class="skill-progress bg-gradient-to-r from-primary-400 to-primary-500 h-2 rounded-full" data-width="70%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-users text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Komunikasi</h3>
+                    <p class="text-white/80 mb-6">Kemampuan presentasi dan komunikasi yang baik</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm text-white/70">
+                            <span>Progress</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-2">
+                            <div class="skill-progress bg-gradient-to-r from-secondary-400 to-secondary-500 h-2 rounded-full" data-width="88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white/5 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Pendidikan</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-secondary-400 to-secondary-300 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary-400 to-primary-400"></div>
+                    
+                    <div class="timeline-item relative pl-20 pb-12">
+                        <div class="absolute left-6 top-0 w-4 h-4 bg-gradient-to-r from-primary-400 to-primary-500 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-xl hover:scale-105 transition-all duration-300">
+                            <h3 class="text-2xl font-bold text-white mb-2">SMK Negeri 1 Liwa</h3>
+                            <p class="text-secondary-300 font-semibold mb-4">2022 - Sekarang</p>
+                            <p class="text-white/80 mb-6 leading-relaxed">
+                                Jurusan Teknik Jaringan Komputer. Belajar tentang konfigurasi jaringan, 
+                                troubleshooting, dan teknologi informasi.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary-400/20 text-primary-300 rounded-full text-sm font-medium">Jaringan Komputer</span>
+                                <span class="px-3 py-1 bg-primary-400/20 text-primary-300 rounded-full text-sm font-medium">Troubleshooting</span>
+                                <span class="px-3 py-1 bg-primary-400/20 text-primary-300 rounded-full text-sm font-medium">Teknologi Informasi</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-20">
+                        <div class="absolute left-6 top-0 w-4 h-4 bg-gradient-to-r from-secondary-400 to-secondary-500 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-xl hover:scale-105 transition-all duration-300">
+                            <h3 class="text-2xl font-bold text-white mb-2">Pengembangan Diri</h3>
+                            <p class="text-secondary-300 font-semibold mb-4">2022 - Sekarang</p>
+                            <p class="text-white/80 mb-6 leading-relaxed">
+                                Mengembangkan skill marketing dan penjualan melalui berbagai 
+                                pembelajaran mandiri dan praktik langsung.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-secondary-400/20 text-secondary-300 rounded-full text-sm font-medium">Digital Marketing</span>
+                                <span class="px-3 py-1 bg-secondary-400/20 text-secondary-300 rounded-full text-sm font-medium">Sales Strategy</span>
+                                <span class="px-3 py-1 bg-secondary-400/20 text-secondary-300 rounded-full text-sm font-medium">Business Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Hubungi Saya</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-secondary-400 to-secondary-300 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Mari Berkolaborasi!</h3>
+                        <p class="text-white/80 text-lg leading-relaxed">
+                            Saya selalu terbuka untuk diskusi tentang teknologi jaringan, 
+                            marketing, atau peluang kolaborasi lainnya.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4 p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-primary-400 to-primary-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Email</h4>
+                                <p class="text-white/70">dimas.bayu@email.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-secondary-400 to-secondary-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Telepon</h4>
+                                <p class="text-white/70">+62 812-3456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-primary-400 to-primary-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Lokasi</h4>
+                                <p class="text-white/70">Liwa, Lampung Barat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-xl">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <input type="text" id="name" name="name" placeholder="Nama Lengkap" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300">
+                        </div>
+                        <div>
+                            <input type="email" id="email" name="email" placeholder="Email" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300">
+                        </div>
+                        <div>
+                            <input type="text" id="subject" name="subject" placeholder="Subjek" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300">
+                        </div>
+                        <div>
+                            <textarea id="message" name="message" placeholder="Pesan" rows="5" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300 resize-none"></textarea>
+                        </div>
+                        <button type="submit" 
+                            class="w-full bg-gradient-to-r from-secondary-400 to-secondary-500 text-primary-900 font-semibold py-3 px-6 rounded-lg hover:from-secondary-500 hover:to-secondary-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Kirim Pesan
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 backdrop-blur-lg border-t border-white/10 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-white/80 mb-4 md:mb-0">
+                    <p>&copy; 2024 Dimas Bayu. Dibuat dengan ❤️ dan TypeScript.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-secondary-400 hover:text-primary-900 transition-all duration-300 transform hover:-translate-y-1">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-secondary-400 hover:text-primary-900 transition-all duration-300 transform hover:-translate-y-1">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-secondary-400 hover:text-primary-900 transition-all duration-300 transform hover:-translate-y-1">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

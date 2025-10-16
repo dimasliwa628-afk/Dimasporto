@@ -5,10 +5,11 @@
   "main": "index.html",
   "scripts": {
     "build": "tsc && npm run copy-assets",
-    "copy-assets": "copyfiles -u 1 src/**/*.css dist/ && copyfiles -u 1 src/**/*.html dist/",
+    "copy-assets": "copyfiles -u 1 src/**/*.css dist/ && copyfiles -u 1 src/**/*.html dist/ && copyfiles -u 1 src/**/*.css public/ && copyfiles -u 1 dist/**/*.js public/",
     "dev": "tsc --watch",
     "serve": "npx http-server dist -p 3000",
-    "start": "npm run build && npm run serve"
+    "start": "npm run build && npm run serve",
+    "vercel-build": "npm run build"
   },
   "keywords": ["portfolio", "website", "typescript", "student"],
   "author": "Dimas Bayu",
